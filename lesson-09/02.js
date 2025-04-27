@@ -24,4 +24,6 @@ const doubledNumbers = map(numbers, (element, index) => {
 console.log(doubledNumbers) // Должен вывести: [2, 4, 6, 8, 10]
 */
 
-const doubledNumbers = numbers.map(element => 10 - element )
+const doubledNumbers = map(numbers, (element, index) => {
+  return element += element
+})
