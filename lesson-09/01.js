@@ -25,6 +25,16 @@ console.log(oddNumbers) // Должен вывести: [1, 3, 5]
 
 const numbers = [1, 2, 3, 4, 5, 6, 6];
 
-const newNumbers = numbers.filter((element, index) => { return element % 2 === 1})
-    
-console.log(newNumbers);
+function filter(array, callback){
+  const result = []
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i], i)){
+result.push(array[i])
+    }
+  }
+  return result
+
+}
+const oddNumbers = filter(numbers, (element, index) => {
+  return element % 2 !== 0
+});
