@@ -24,15 +24,13 @@
 const model = {
   movies: [],
   addMovie(title, description) {
-    const id = Math.random()
+    const id = Math.random().toString()
     const newMovie = { id, title, description }
     this.movies.push(newMovie)
     view.renderMovies(this.movies)
   },
   deleteMovie(id) {
-    this.movies = this.movies.filter(movie => {
-      return movie.id !== id
-    })
+    this.movies = this.movies.filter((movie) => movie.id !== id);
     view.renderMovies(this.movies); // Обновляем отображение фильмов
   },
 }
