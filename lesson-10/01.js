@@ -30,7 +30,9 @@ const model = {
     view.renderMovies(this.movies)
   },
   deleteMovie(id) {
-    this.movies = this.movies.filter(movie => movie.id !== id);
+    this.movies = this.movies.filter(movie => {
+      return movie.id !== id
+    })
     view.renderMovies(this.movies); // Обновляем отображение фильмов
   },
 }
